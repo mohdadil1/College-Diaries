@@ -1,5 +1,5 @@
 window.PROFILE_FILES = [
-  "aarav-sharma.json",
+  "Prem.json",
   "meera-rao.json",
   "kabir-khan.json",
   "ananya-das.json",
