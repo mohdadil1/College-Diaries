@@ -2,8 +2,20 @@ const grid = document.querySelector('#grid');
 const modal = document.querySelector('#modal');
 const content = document.querySelector('#modal-content');
 const search = document.querySelector('#search');
+const themeToggle = document.querySelector('#theme-toggle');
 const cards = [...grid.querySelectorAll('.card')];
 let filter = 'All';
+
+function setTheme(isDark) {
+  document.body.dataset.theme = isDark ? 'dark' : 'light';
+  themeToggle.setAttribute('aria-pressed', String(isDark));
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+setTheme(localStorage.getItem('theme') === 'dark');
+themeToggle.addEventListener('click', () => {
+  setTheme(document.body.dataset.theme !== 'dark');
+});
 
 function render() {
   const query = search.value.toLowerCase().trim();
