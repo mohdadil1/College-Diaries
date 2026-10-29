@@ -1,0 +1,11 @@
+{
+  "id": "Hemasri",
+  "name":"Hemasri S",
+  "course": "BCA",
+  "year": " 1st year",
+  "bio": "Curious mind with a passion for technology,building small projects and learning step by step.",
+  "skills": ["HTML", "CSS", "AI","DS"],
+  "image": "images/hemasri.jpeg",
+  "tint": "#efe3d8",
+  "story": "I enjoy learning web development and trying out new ideas."
+}
