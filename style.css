@@ -261,7 +261,19 @@ h2 span {
     font-size: 10px;
     font-weight: 700
 }
-
+.back{
+    position : absolute;
+    top: 20px;
+    left:20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #283d29;
+    color: white;
+    border-radius: 30px;
+    padding: 17px 24px;
+    font-size: 14px;
+    margin-top: 14px;
+}
 
 .card-body {
     padding: 22px
