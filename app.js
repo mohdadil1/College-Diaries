@@ -3,6 +3,21 @@ const modal = document.querySelector('#modal');
 const content = document.querySelector('#modal-content');
 const search = document.querySelector('#search');
 const cards = [...grid.querySelectorAll('.card')];
+const quoteButton = document.querySelector('#quote-button');
+const quoteOutput = document.querySelector('#coding-quote');
+const codingQuotes = [
+  'It works on my machine is not a deployment strategy.',
+  'Every expert was once a beginner who refused to give up.',
+  'A bug is just an unexpected feature with excellent timing.',
+  'Keep calm and check the console.',
+  'The best code is the code you understand tomorrow.',
+  'First, solve the problem. Then, write the code.',
+  'Programming: turning coffee into errors, then into solutions.',
+  'Small commits can lead to big ideas.',
+  'There are 10 kinds of people: those who understand binary and those who do not.',
+  'You do not have to be perfect. You just have to keep debugging.'
+];
+let previousQuoteIndex = -1;
 let filter = 'All';
 
 function render() {
@@ -57,6 +72,14 @@ git push -u origin profile/your-name</pre>
 }
 
 search.addEventListener('input', render);
+quoteButton.addEventListener('click', () => {
+  const availableQuotes = codingQuotes
+    .map((quote, index) => ({ quote, index }))
+    .filter(({ index }) => index !== previousQuoteIndex);
+  const nextQuote = availableQuotes[Math.floor(Math.random() * availableQuotes.length)];
+  previousQuoteIndex = nextQuote.index;
+  quoteOutput.textContent = nextQuote.quote;
+});
 document.querySelector('#filters').addEventListener('click', event => {
   const button = event.target.closest('button[data-filter]');
   if (!button) return;
