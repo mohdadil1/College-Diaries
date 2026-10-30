@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>quote</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                text-align: center;
+                padding: 20px;
+                border-radius: 10px;
+                border: 4px solid black;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background:linear-gradient(135deg, #667eea, #764ba2)
+            }
+            h2{
+                color: #333;
+                margin-bottom: 20px;
+            }
+            #quote {
+                font-size: 18px;
+                margin: 20px 0;
+                background-color: #ffffffc2;
+                padding: 70px;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border: 2px solid rgb(61, 47, 255);
+    
+            }
+            button:hover {
+                background-color: #ccc;
+                
+            }
+            button{
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                background-color: #4c91af;
+                color: white;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>COLLEGE DIARIES: QUOTE CORNER</h1>
+        <h2 id="quote">CLICK FOR A QUOTE</h2>
+        <button onclick="newquote()">New Quote</button>
+        <a href="index.html">Back</a>
+        <script>
+            const quotes = [
+                "The best way to get started is to quit talking and begin doing.",
+                "Don't let yesterday take up too much of today.",
+                "It's not whether you get knocked down, it's whether you get up.",
+                "If you are working on something exciting, it will keep you motivated.",
+                "Success is not in what you have, but who you are.",
+                "Be so good they can't ignore you.",
+                "Dream big Work hard Stay humble.",
+                "Your only limit is your mind.",
+                "One day or day one. You decide.",
+                "Difficult roads often lead to beautiful destinations.",
+                "Make yourself proud.",
+                "Don't watch the clock; do what it does. Keep going.",
+                "The harder you work for something, the greater you'll feel when you achieve it.",
+                "Don't stop when you're tired. Stop when you're done.",
+                "Wake up with determination. Go to bed with satisfaction.",
+                "Do something today that your future self will thank you for.",
+                "Little things make big days.",
+                "It's going to be hard, but hard does not mean impossible.",
+                "Don't wait for opportunity. Create it."
+            ];
+
+            function newquote() {
+                // Implementation for generating a new quote
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                document.getElementById("quote").textContent = quotes[randomIndex];
+            }
+        </script>
+    </body>
+</html>
