@@ -20,6 +20,7 @@ const codingQuotes = [
 let previousQuoteIndex = -1;
 let filter = 'All';
 
+
 function render() {
   const query = search.value.toLowerCase().trim();
   let visibleCount = 0;
