@@ -1,0 +1,243 @@
+/* ==========================================================
+   College Diaries - dark mode (v3, fixes from screenshots)
+   Load AFTER your main stylesheet.
+   Dark mode is on when <html> has the class "dark-mode".
+   ========================================================== */
+
+/* ---------- Colors in one place ---------- */
+html.dark-mode {
+  color-scheme: dark;
+
+  --d-bg: #121212;
+  --d-surface: #1c1c1f;
+  --d-surface-2: #26262b;
+  --d-border: #34343a;
+  --d-text: #ececee;
+  --d-muted: #a1a1aa;
+  --d-link: #8ab4ff;
+  --d-accent: #ffb86b;
+  --d-green: #a9bf7e; /* brighter version of the olive accent */
+}
+
+/* ---------- Page ---------- */
+html.dark-mode body {
+  background: var(--d-bg) !important;
+  color: var(--d-text) !important;
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6 {
+  color: var(--d-text) !important;
+}
+
+/* Links keep the surrounding text color (nav, brand, buttons) ... */
+html.dark-mode a { color: inherit; }
+
+/* ... and only links inside normal text turn blue */
+html.dark-mode p a,
+html.dark-mode li a {
+  color: var(--d-link);
+}
+
+html.dark-mode small,
+html.dark-mode [class*="muted"],
+html.dark-mode [class*="sub"],
+html.dark-mode [class*="meta"] {
+  color: var(--d-muted) !important;
+}
+
+/* Small green labels like "THE PEOPLE BEHIND THE CODE", brand accent, sparkle */
+html.dark-mode [class*="eyebrow"],
+html.dark-mode [class*="kicker"],
+html.dark-mode [class*="overline"],
+html.dark-mode [class*="accent"],
+html.dark-mode [class*="sparkle"] {
+  color: var(--d-green) !important;
+}
+
+html.dark-mode hr { border-color: var(--d-border); }
+
+/* ---------- Navbar / footer ---------- */
+html.dark-mode header,
+html.dark-mode nav,
+html.dark-mode [class*="nav"],
+html.dark-mode [class*="header"] {
+  background-color: rgba(18, 18, 18, 0.92) !important;
+  border-color: var(--d-border) !important;
+  color: var(--d-text) !important;
+}
+
+html.dark-mode footer,
+html.dark-mode [class*="footer"] {
+  background: #0e0e10 !important;
+  border-color: var(--d-border) !important;
+  color: var(--d-muted) !important;
+}
+
+/* ---------- Sections (hero, community, call-to-action) ---------- */
+html.dark-mode section,
+html.dark-mode main,
+html.dark-mode [class*="hero"],
+html.dark-mode [class*="section"],
+html.dark-mode [class*="cta"] {
+  background-color: transparent !important;
+  color: var(--d-text);
+}
+
+/* ---------- Student profile cards ---------- */
+html.dark-mode article,
+html.dark-mode [class*="card"],
+html.dark-mode [class*="profile"] {
+  background: var(--d-surface) !important;
+  border-color: var(--d-border) !important;
+  color: var(--d-text) !important;
+  box-shadow: none !important;
+}
+
+/* ---------- Skill tags / course labels ---------- */
+html.dark-mode [class*="tag"],
+html.dark-mode [class*="chip"],
+html.dark-mode [class*="badge"],
+html.dark-mode [class*="skill"] {
+  background: var(--d-surface-2) !important;
+  border-color: var(--d-border) !important;
+  color: var(--d-text) !important;
+}
+
+/* ---------- Buttons and filter pills ---------- */
+html.dark-mode button,
+html.dark-mode [class*="btn"],
+html.dark-mode [class*="pill"],
+html.dark-mode [class*="filter"] {
+  background: var(--d-surface-2);
+  border-color: var(--d-border);
+  color: var(--d-text);
+}
+
+html.dark-mode [class*="active"],
+html.dark-mode .active {
+  background: var(--d-accent) !important;
+  color: #1a1a1a !important;
+}
+
+/* ---------- Search box (wrapper AND input, so no white box) ---------- */
+
+/* the wrapper: anything with "search" in its class, or any element
+   that directly contains a text/search input */
+html.dark-mode [class*="search"],
+html.dark-mode :has(> input[type="search"]),
+html.dark-mode :has(> input[type="text"]),
+html.dark-mode :has(> input:not([type])) {
+  background: var(--d-surface) !important;
+  border-color: var(--d-border) !important;
+  color: var(--d-text) !important;
+}
+
+/* the input itself blends into the wrapper */
+html.dark-mode input,
+html.dark-mode select,
+html.dark-mode textarea {
+  background: var(--d-surface) !important;
+  border-color: var(--d-border) !important;
+  color: var(--d-text) !important;
+}
+
+html.dark-mode [class*="search"] input,
+html.dark-mode input[type="search"],
+html.dark-mode input[class*="search"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--d-text) !important;
+}
+
+/* the little magnifier icon */
+html.dark-mode [class*="search"] span,
+html.dark-mode [class*="search"] svg,
+html.dark-mode [class*="search"] i,
+html.dark-mode [class*="icon"] {
+  color: var(--d-muted) !important;
+}
+
+html.dark-mode input::placeholder { color: var(--d-muted); opacity: 1; }
+
+html.dark-mode [class*="search"]:focus-within,
+html.dark-mode :has(> input:focus) {
+  border-color: var(--d-accent) !important;
+}
+
+/* ---------- Popups / modals ---------- */
+html.dark-mode [class*="modal"],
+html.dark-mode [class*="dialog"],
+html.dark-mode [class*="popup"] {
+  background: var(--d-surface) !important;
+  color: var(--d-text) !important;
+  border-color: var(--d-border) !important;
+}
+
+/* ---------- Images ---------- */
+html.dark-mode img { filter: brightness(0.92); }
+
+/* DSU logo: original colors and size, just no background box */
+html.dark-mode img[alt*="logo" i] {
+  background: none !important;
+  padding: 0;
+  border-radius: 0;
+  filter: none !important;
+}
+
+/* ---------- Smooth fade (only after the first paint) ---------- */
+html.theme-ready body,
+html.theme-ready section,
+html.theme-ready article,
+html.theme-ready header,
+html.theme-ready footer,
+html.theme-ready [class*="card"],
+html.theme-ready [class*="tag"],
+html.theme-ready [class*="search"] {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-ready * { transition: none !important; }
+}
+
+/* ---------- Toggle button ---------- */
+#theme-toggle {
+  cursor: pointer;
+  font: inherit;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #c9c9c9;
+  background: #ffffff;
+  color: #222222;
+}
+
+#theme-toggle:focus-visible {
+  outline: 2px solid #4c8dff;
+  outline-offset: 2px;
+}
+
+#theme-toggle.floating {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+html.dark-mode #theme-toggle {
+  background: var(--d-surface-2) !important;
+  border-color: #3d3d44 !important;
+  color: #ffd76a !important;
+}
+.course{
+  color:#0e0e10
+}
+.github{
+  color:#0e0e10
+}

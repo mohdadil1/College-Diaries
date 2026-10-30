@@ -3,6 +3,21 @@ const modal = document.querySelector('#modal');
 const content = document.querySelector('#modal-content');
 const search = document.querySelector('#search');
 const cards = [...grid.querySelectorAll('.card')];
+const quoteButton = document.querySelector('#quote-button');
+const quoteOutput = document.querySelector('#coding-quote');
+const codingQuotes = [
+  'It works on my machine is not a deployment strategy.',
+  'Every expert was once a beginner who refused to give up.',
+  'A bug is just an unexpected feature with excellent timing.',
+  'Keep calm and check the console.',
+  'The best code is the code you understand tomorrow.',
+  'First, solve the problem. Then, write the code.',
+  'Programming: turning coffee into errors, then into solutions.',
+  'Small commits can lead to big ideas.',
+  'There are 10 kinds of people: those who understand binary and those who do not.',
+  'You do not have to be perfect. You just have to keep debugging.'
+];
+let previousQuoteIndex = -1;
 let filter = 'All';
 
 
@@ -58,6 +73,14 @@ git push -u origin profile/your-name</pre>
 }
 
 search.addEventListener('input', render);
+quoteButton.addEventListener('click', () => {
+  const availableQuotes = codingQuotes
+    .map((quote, index) => ({ quote, index }))
+    .filter(({ index }) => index !== previousQuoteIndex);
+  const nextQuote = availableQuotes[Math.floor(Math.random() * availableQuotes.length)];
+  previousQuoteIndex = nextQuote.index;
+  quoteOutput.textContent = nextQuote.quote;
+});
 document.querySelector('#filters').addEventListener('click', event => {
   const button = event.target.closest('button[data-filter]');
   if (!button) return;
@@ -74,3 +97,89 @@ grid.addEventListener('click', event => {
 document.querySelector('#guide').addEventListener('click', showGuide);
 document.querySelector('#guide2').addEventListener('click', showGuide);
 document.querySelector('.close').addEventListener('click', () => modal.close());
+
+/* College Diaries - dark mode toggle (upgraded)
+   Add just before </body>:  <script src="theme-toggle.js"></script>
+
+   What it does:
+   - Starts in the visitor's saved choice, else their device setting
+   - Toggles the class "dark-mode" on <html>
+   - Updates the button label + aria-pressed
+   - Remembers the choice between visits
+   - Follows device changes until the visitor picks manually
+   - Syncs across open tabs
+*/
+(function () {
+  "use strict";
+
+  var root = document.documentElement;
+  var KEY = "theme";
+  var CLASS = "dark-mode";
+  var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+
+  function getSaved() {
+    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+  }
+
+  function save(theme) {
+    try { localStorage.setItem(KEY, theme); } catch (e) {}
+  }
+
+  function initialTheme() {
+    return getSaved() || (media && media.matches ? "dark" : "light");
+  }
+
+  var button = document.getElementById("theme-toggle");
+
+  // No button in the HTML? Create a floating one.
+  if (!button) {
+    button = document.createElement("button");
+    button.id = "theme-toggle";
+    button.type = "button";
+    button.className = "floating";
+    document.body.appendChild(button);
+  }
+
+  function apply(theme) {
+    var isDark = theme === "dark";
+    root.classList.toggle(CLASS, isDark);
+
+    // Label shows what clicking will do
+    button.textContent = isDark ? "\u2600\uFE0F Light mode" : "\uD83C\uDF19 Dark mode";
+    button.setAttribute("aria-pressed", String(isDark));
+
+    // Mobile browser bar color (optional nicety)
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "theme-color";
+      document.head.appendChild(meta);
+    }
+    meta.content = isDark ? "#121212" : "#ffffff";
+  }
+
+  apply(initialTheme());
+
+  button.addEventListener("click", function () {
+    var next = root.classList.contains(CLASS) ? "light" : "dark";
+    apply(next);
+    save(next);
+  });
+
+  // Follow the device only while the visitor hasn't chosen manually
+  if (media) {
+    var onSystemChange = function (e) {
+      if (!getSaved()) apply(e.matches ? "dark" : "light");
+    };
+    if (media.addEventListener) media.addEventListener("change", onSystemChange);
+    else if (media.addListener) media.addListener(onSystemChange); // older Safari
+  }
+
+  // Keep other open tabs of the site in sync
+  window.addEventListener("storage", function (e) {
+    if (e.key === KEY && e.newValue) apply(e.newValue);
+  });
+
+  // Turn on transitions after first paint so the page doesn't animate on load
+  requestAnimationFrame(function () { root.classList.add("theme-ready"); });
+})();

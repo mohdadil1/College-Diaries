@@ -1,122 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>about us page</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Learn about College Diaries, its student community, and its mission.">
+        <title>About Us | College Diaries</title>
+        <link rel="stylesheet" href="style.css">
         <style>
-            body{
-                background-color :#f9f8f3;
-                font-family:Arial, sans-serif;
-                color:#222;
-                padding:100px;
-                height:100vh;
+            .about-page {
+                width: min(100% - 40px, 850px);
+                margin: 0 auto;
+                padding: clamp(32px, 7vw, 76px) 0;
             }
-            h1{
-                text-align:center;
-                letter-spacing :1px;
-                margin-bottom:40px;
-                font-family: georgia,serif;
-                font-size:60px;
+
+            .about-page h1 {
+                margin-top: 0;
+                font-size: clamp(40px, 8vw, 64px);
+                letter-spacing: -2px;
             }
-            h2{
-                 color: #6a9a48;
-                 font-style:italic;
-                 font-family:georgia ,serif;
-                 font-size:30px;
-                
+
+            .about-page section {
+                margin-top: 36px;
             }
-            p{
-                color:#555;
-                border:2px solid black;
-                border-radius:14px;
-                padding: 20px;
-                margin:1;
-                font-size:20px;
+
+            .about-page h2 {
+                margin-bottom: 8px;
+                color: #607949;
+                font-family: Georgia, serif;
+                font-size: clamp(23px, 4vw, 30px);
             }
-            dt{
-                color:#555;
+
+            .about-page h3 {
+                margin: 0;
+                color: #283924;
+                font-size: 18px;
             }
-            h4{
-                font-style:italic;
-                color:#023020;
-                font-size:larger;
-                display:list-item;
-                list-style-position:inside;
-                list-style-type:disc;
+
+            .about-page p {
+                margin-top: 10px;
+                padding: 18px;
+                border: 1px solid #dedfd5;
+                border-radius: 14px;
+                background: #fff;
             }
-            
 
-/* About Page - Base Styles */
-.about-page {
-width: 100%;
-max-width: 1200px;
-margin: 0 auto;
-padding: 20px;
-box-sizing: border-box;
-}
+            .about-page .back-link {
+                display: inline-block;
+                margin-top: 24px;
+                color: #365b36;
+                font-weight: 700;
+                text-decoration: underline;
+                text-underline-offset: 4px;
+            }
 
-.about-page img {/* Large Mobile */
-@media (min-width: 481px) and (max-width: 767px) {
-.about-page {
-padding: 15px;
-}
-}
+            .skip-link {
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                z-index: 1;
+                padding: 10px 14px;
+                transform: translateY(-160%);
+                border-radius: 8px;
+                background: #fff;
+                color: #283924;
+                font-weight: 700;
+            }
 
-/* Small Mobile */
-@media (max-width: 480px) {
-.about-page {
-padding: 10px;
-}
-max-width: 100%;
-height: auto;
-}
+            .skip-link:focus {
+                transform: translateY(0);
+            }
 
-/* Large Desktop */
-@media (min-width: 1200px) {
-.about-page {
-max-width: 1140px;
-}
-}
+            @media (max-width: 560px) {
+                .about-page {
+                    width: calc(100% - 32px);
+                }
 
-/* Laptop */
-@media (min-width: 992px) and (max-width: 1199px) {
-.about-page {
-max-width: 960px;
-}
-}
-
-/* Tablet */
-@media (min-width: 768px) and (max-width: 991px) {
-.about-page {
-max-width: 720px;
-padding: 20px;
-}
+                .about-site-header nav > a {
+                    display: inline;
+                }
+            }
+            body {
+  background-color: #ffffff;
+  color: #222222;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-
+body.dark-mode {
+  background-color: #121212;
+  color: #eeeeee;
 }
-                  
-
-
-
+#theme-toggle {
+    color:#365b36;}
         </style>
     </head>
     <body>
-        <h1>ABOUT US</h1>
-        <h2>INTRODUCTION</h2>
-        
-        <h4>What is college diaries?</h4>
-        <p>CollegeDiaries is a student-built project where students share their college experiences, stories, and memories. It brings students together and celebrates every unique journey. 💚</p>
-        <h2>OUR MISSION</h2>
-        <h4>Why did students create this?</h4>
-        <p>Students created this project to learn team work and github,and to give everyone a place to share their college life in their own words. </p>
-        <h2>OUR COMMUNITY</h2>
-        <h4>Who is this project for?</h4>
-        <p>This project is for college students,classmates and anyone who wants to remember and share their student journey. </p>
-        <h2>OUR VISION</h2>
-        <h4>What do we hope to achieve?</h4>
-        <p>We hope to build a friendly space where every student has a profile, every story is heard,and we all learn to build the website together.</p>
-        <p><a href="index.html">BACK TO HOME PAGE</a></p>
-    </body>
+        <a class="skip-link" href="#main">Skip to main content</a>
+        <header class="about-site-header">
+            <a class="brand" href="index.html">College<span>Diaries.</span></a>
+            <nav aria-label="Main navigation">
+                <a href="index.html#students">The students</a>
+                <a href="index.html">Home</a>
+                <button id="theme-toggle" type="button" aria-pressed="false">
+  Dark mode
+</button>
+            </nav>
+        </header>
+        <main id="main" class="about-page">
+            <h1>About College Diaries</h1>
+            <section aria-labelledby="introduction">
+                <h2 id="introduction">Introduction</h2>
+                <h3>What is College Diaries?</h3>
+                <p>College Diaries is a student-built project where students share their college experiences, stories, and memories. It brings students together and celebrates every unique journey.</p>
+            </section>
+            <section aria-labelledby="mission">
+                <h2 id="mission">Our mission</h2>
+                <h3>Why did students create this?</h3>
+                <p>Students created this project to learn teamwork and GitHub, and to give everyone a place to share college life in their own words.</p>
+            </section>
+            <section aria-labelledby="community">
+                <h2 id="community">Our community</h2>
+                <h3>Who is this project for?</h3>
+                <p>This project is for college students, classmates, and anyone who wants to remember and share their student journey.</p>
+            </section>
+            <section aria-labelledby="vision">
+                <h2 id="vision">Our vision</h2>
+                <h3>What do we hope to achieve?</h3>
+                <p>We hope to build a friendly space where every student has a profile, every story is heard, and we all learn to build the website together.</p>
+            </section>
+            <a class="back-link" href="index.html">Back to home page</a>
+        </main>
+        <footer>
+            <a class="brand" href="index.html">College<span>Diaries.</span></a>
+            <p>Built by students. One pull request at a time.</p>
+        </footer>
+        <script>
+  const themeButton = document.getElementById("theme-toggle");
 
+  themeButton.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark-mode");
+
+    themeButton.textContent = isDark ? "Light mode" : "Dark mode";
+    themeButton.setAttribute("aria-pressed", String(isDark));
+  });
+</script>
+    </body>
 </html>
