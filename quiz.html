@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C Quiz Game — College Diaries</title>
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+<div class="glow"></div>
+<main class="wrap">
+  <p class="eyebrow">A student-built open source project</p>
+
+  <section id="start" class="screen active">
+    <h1>Different questions.<br>One <em>C quiz.</em></h1>
+    <p class="sub">Fresh questions every round, generated as you play. Pick a level and start.</p>
+    <div class="levels" id="levels">
+      <button class="pill active" data-l="1">Easy</button>
+      <button class="pill" data-l="2">Medium</button>
+      <button class="pill" data-l="3">Hard</button>
+    </div>
+    <button class="cta" id="startBtn">Start quiz →</button>
+  </section>
+
+  <section id="game" class="screen">
+    <div class="bar"><i id="barFill"></i></div>
+    <div class="meta"><span id="count"></span><span id="streak"></span></div>
+    <h2 id="qText"></h2>
+    <pre id="code" class="code"></pre>
+    <div id="opts" class="opts"></div>
+    <p id="why" class="why"></p>
+    <button class="cta" id="nextBtn" hidden>Next →</button>
+  </section>
+
+  <section id="end" class="screen">
+    <p class="eyebrow">Your result</p>
+    <div class="score"><b id="scoreNum">0</b><span id="scoreTotal"></span></div>
+    <p id="msg" class="sub"></p>
+    <button class="cta" id="againBtn">Play again ↻</button>
+    <a class="back" href="index.html">← Back to College Diaries</a>
+  </section>
+</main>
+<script src="quiz.js"></script>
+</body>
+</html>
