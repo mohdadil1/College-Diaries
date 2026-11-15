@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find College Diaries students to teach or learn programming skills together.">
+  <title>Skill Exchange — College Diaries</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dark.css">
+  <link rel="stylesheet" href="skill-exchange.css">
+</head>
+
+<body>
+  <header>
+    <a class="brand-lockup" href="index.html">
+      <img src="images/DSU logo.PNG" alt="DSU logo">
+      <span class="brand">College<span>Diaries.</span></span>
+    </a>
+    <nav class="site-menu" aria-label="Main navigation">
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false"
+        aria-controls="site-menu-panel">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+      <div id="site-menu-panel" class="site-menu__dropdown" hidden>
+        <a href="index.html">Home</a>
+        <a href="index.html#students">Students</a>
+        <a href="skill-exchange.html" aria-current="page">Skill Exchange</a>
+        <a href="profile-builder.html">Build a profile</a>
+        <button id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="exchange-page">
+    <section class="exchange-hero">
+      <p class="exchange-eyebrow">LEARN FROM EACH OTHER</p>
+      <h1>Skills grow <em>together.</em></h1>
+      <p>Share what you can teach, find a classmate to learn from, and take your next step in code.</p>
+      <a class="exchange-cta" href="#join-exchange">Join the exchange <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <section id="join-exchange" class="exchange-panel" aria-labelledby="join-heading">
+      <div class="exchange-panel__intro">
+        <p class="exchange-eyebrow">YOUR NEXT STEP</p>
+        <h2 id="join-heading">Add your skills</h2>
+        <p>Choose whether you can teach or want to learn. Your GitHub profile helps classmates connect with you.</p>
+      </div>
+      <form id="exchange-form">
+        <div class="form-row">
+          <label for="student-name">Your name</label>
+          <input id="student-name" name="name" type="text" maxlength="60" autocomplete="name" required
+            placeholder="e.g. Alex Kumar">
+        </div>
+        <div class="form-row">
+          <label for="github-url">GitHub profile</label>
+          <input id="github-url" name="github" type="url" autocomplete="url" required
+            placeholder="https://github.com/username">
+        </div>
+        <fieldset class="mode-options">
+          <legend>What would you like to do?</legend>
+          <label class="mode-option">
+            <input type="radio" name="mode" value="teach" required>
+            <span><strong>I Can Teach</strong><small>Share skills you know</small></span>
+          </label>
+          <label class="mode-option">
+            <input type="radio" name="mode" value="learn">
+            <span><strong>I Want to Learn</strong><small>Ask classmates for help</small></span>
+          </label>
+        </fieldset>
+        <fieldset class="skill-options">
+          <legend>Select your skills <span>(choose at least one)</span></legend>
+          <div id="skill-choices" class="skill-choice-grid"></div>
+        </fieldset>
+        <button class="exchange-submit" type="submit">Add my profile <span aria-hidden="true">↗</span></button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="storage-note">
+        Profiles added here are saved in this browser only. To share an entry with everyone, add it to
+        <a href="https://github.com/Devi-prasad-H/college-diaries" target="_blank" rel="noopener noreferrer">the
+          College Diaries GitHub repository</a>
+        through a pull request.
+      </p>
+    </section>
+
+    <section class="directory" aria-labelledby="directory-heading">
+      <div class="directory-heading">
+        <div>
+          <p class="exchange-eyebrow">FIND A CLASSMATE</p>
+          <h2 id="directory-heading">Explore student skills</h2>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+      </div>
+      <div class="directory-tools">
+        <label class="directory-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="student-search" type="search" placeholder="Search students or skills"
+            aria-label="Search students by name, skill, or GitHub username">
+        </label>
+        <label class="skill-filter-label" for="skill-filter">Skill</label>
+        <select id="skill-filter" aria-label="Filter students by skill">
+          <option value="">All skills</option>
+        </select>
+        <div class="mode-filters" role="group" aria-label="Filter by learning goal">
+          <button type="button" data-mode-filter="all" aria-pressed="true">Everyone</button>
+          <button type="button" data-mode-filter="teach" aria-pressed="false">Can teach</button>
+          <button type="button" data-mode-filter="learn" aria-pressed="false">Want to learn</button>
+        </div>
+      </div>
+      <div id="student-list" class="student-grid" aria-live="polite"></div>
+      <p id="empty-state" class="empty-state" hidden>No students match those filters yet. Try another skill or
+        <a href="#join-exchange">add your profile</a>.</p>
+    </section>
+  </main>
+
+  <footer class="exchange-footer">
+    <a class="brand" href="index.html">College<span>Diaries.</span></a>
+    <p>Built by students. Better together.</p>
+    <a href="index.html">Back to the homepage</a>
+  </footer>
+
+  <script src="skill-exchange.js"></script>
+  <script src="theme-toggle.js"></script>
+</body>
+
+</html>

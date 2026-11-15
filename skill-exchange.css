@@ -1,0 +1,533 @@
+.exchange-page {
+    max-width: 1180px;
+    padding: 0 26px 70px
+}
+
+.exchange-hero {
+    padding: 64px 0 54px;
+    max-width: 750px
+}
+
+.exchange-eyebrow {
+    margin: 0;
+    color: #657459;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px
+}
+
+.exchange-hero h1 {
+    margin: 18px 0 12px;
+    font-size: clamp(44px, 7vw, 72px);
+    letter-spacing: -3px
+}
+
+.exchange-hero h1 em {
+    color: #657e4f;
+    font-family: Georgia, serif;
+    font-weight: 400
+}
+
+.exchange-hero > p:not(.exchange-eyebrow) {
+    max-width: 580px;
+    margin: 0 0 22px
+}
+
+.exchange-cta,
+.exchange-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 13px 20px;
+    border: 0;
+    border-radius: 30px;
+    background: #283d29;
+    color: #fff;
+    font-weight: 700
+}
+
+.exchange-panel {
+    display: grid;
+    grid-template-columns: minmax(200px, .75fr) minmax(0, 1.5fr);
+    gap: 20px 46px;
+    padding: 34px;
+    border: 1px solid #e1e2d8;
+    border-radius: 16px;
+    background: #fff
+}
+
+.exchange-panel__intro h2,
+.directory-heading h2 {
+    margin: 10px 0
+}
+
+.exchange-panel__intro p:last-child {
+    margin: 0
+}
+
+#exchange-form {
+    display: grid;
+    gap: 17px
+}
+
+.form-row {
+    display: grid;
+    gap: 7px
+}
+
+.form-row > label,
+.mode-options legend,
+.skill-options legend {
+    font-size: 13px;
+    font-weight: 700
+}
+
+.form-row input,
+.directory-search,
+.directory-tools select {
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #dfe1d7;
+    border-radius: 9px;
+    background: #fbfbf8;
+    color: #202820
+}
+
+.mode-options,
+.skill-options {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+.mode-options legend,
+.skill-options legend {
+    margin-bottom: 9px
+}
+
+.mode-options legend small,
+.skill-options legend span {
+    color: #72776d;
+    font-weight: 400
+}
+
+.mode-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px
+}
+
+.mode-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    min-height: 67px;
+    padding: 12px;
+    border: 1px solid #dfe1d7;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+.mode-option:has(input:checked) {
+    border-color: #657e4f;
+    background: #f0f3e8
+}
+
+.mode-option input {
+    margin: 3px 0 0;
+    accent-color: #536d3b
+}
+
+.mode-option span {
+    display: grid;
+    gap: 3px
+}
+
+.mode-option strong {
+    font-size: 13px
+}
+
+.mode-option small {
+    color: #72776d;
+    font-size: 11px
+}
+
+.skill-choice-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.skill-choice {
+    position: relative;
+    cursor: pointer
+}
+
+.skill-choice input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0
+}
+
+.skill-choice span {
+    display: block;
+    padding: 8px 11px;
+    border: 1px solid #dfe1d7;
+    border-radius: 20px;
+    font-size: 12px;
+    transition: background-color .15s, border-color .15s
+}
+
+.skill-choice input:checked + span {
+    border-color: #657e4f;
+    background: #eef1e6;
+    color: #283d29;
+    font-weight: 700
+}
+
+.skill-choice input:focus-visible + span {
+    outline: 3px solid #8caa58;
+    outline-offset: 3px
+}
+
+.exchange-submit {
+    justify-self: start;
+    padding: 12px 18px
+}
+
+.form-status {
+    min-height: 1.4em;
+    margin: -8px 0 0;
+    font-size: 13px
+}
+
+.storage-note {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding-top: 16px;
+    border-top: 1px solid #e8e9e2;
+    font-size: 13px
+}
+
+.directory {
+    padding-top: 60px
+}
+
+.directory-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px
+}
+
+.directory-heading h2 {
+    margin-bottom: 0
+}
+
+.result-count {
+    margin: 0;
+    font-size: 13px
+}
+
+.directory-tools {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) auto minmax(140px, .6fr) auto;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px
+}
+
+.directory-search {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.directory-search span {
+    color: #657459;
+    font-size: 22px;
+    line-height: 1
+}
+
+.directory-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: inherit
+}
+
+.directory-search:focus-within {
+    border-color: #657e4f
+}
+
+.skill-filter-label {
+    font-size: 13px;
+    font-weight: 700
+}
+
+.directory-tools select {
+    width: 100%
+}
+
+.mode-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: end
+}
+
+.mode-filters button {
+    padding: 9px 11px;
+    border: 1px solid #dfe1d7;
+    border-radius: 20px;
+    background: #fff;
+    color: #283d29;
+    font-size: 12px
+}
+
+.mode-filters button[aria-pressed="true"] {
+    border-color: #283d29;
+    background: #283d29;
+    color: #fff
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px
+}
+
+.student-card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #e1e2d8;
+    border-radius: 13px;
+    background: #fff;
+    transition: transform .18s ease, box-shadow .18s ease
+}
+
+.student-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px #283d2912
+}
+
+.student-card__top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    margin-bottom: 15px
+}
+
+.student-avatar {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e8ee9d;
+    color: #283d29;
+    font-size: 18px;
+    font-weight: 800
+}
+
+.student-identity {
+    min-width: 0
+}
+
+.student-identity h3 {
+    overflow: hidden;
+    margin: 0 0 3px;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.student-identity a {
+    color: #657e4f;
+    font-size: 12px;
+    overflow-wrap: anywhere
+}
+
+.participation-badge {
+    display: inline-flex;
+    padding: 6px 9px;
+    border-radius: 20px;
+    background: #f2f3ed;
+    color: #53604a;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.participation-badge.is-teaching {
+    background: #eaf0de;
+    color: #38552e
+}
+
+.student-card__label {
+    margin: 18px 0 8px;
+    font-size: 12px
+}
+
+.student-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px
+}
+
+.skill-tag {
+    display: inline-flex;
+    padding: 6px 8px;
+    border-radius: 6px;
+    background: #f2f3ed;
+    color: #5b6752;
+    font-size: 11px
+}
+
+.empty-state {
+    padding: 22px;
+    border: 1px dashed #c9cdbf;
+    border-radius: 12px;
+    text-align: center
+}
+
+.exchange-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 26px;
+    border-top: 1px solid #dedfd5
+}
+
+.exchange-footer p {
+    margin: 0;
+    font-size: 13px
+}
+
+.exchange-footer > a:last-child {
+    color: #536d3b;
+    font-size: 13px;
+    font-weight: 700
+}
+
+@media (max-width: 900px) {
+    .directory-tools {
+        grid-template-columns: minmax(180px, 1fr) auto minmax(130px, .6fr)
+    }
+
+    .mode-filters {
+        grid-column: 1 / -1;
+        justify-content: flex-start
+    }
+
+    .student-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+}
+
+@media (max-width: 640px) {
+    .exchange-page {
+        padding: 0 18px 45px
+    }
+
+    .exchange-hero {
+        padding: 44px 0 34px
+    }
+
+    .exchange-hero h1 {
+        font-size: 46px;
+        letter-spacing: -2px
+    }
+
+    .exchange-panel {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 22px
+    }
+
+    .directory {
+        padding-top: 42px
+    }
+
+    .directory-tools {
+        grid-template-columns: auto minmax(0, 1fr)
+    }
+
+    .directory-search,
+    .mode-filters {
+        grid-column: 1 / -1
+    }
+
+    .mode-filters button {
+        flex: 1 1 auto
+    }
+
+    .student-grid {
+        grid-template-columns: 1fr
+    }
+
+    .exchange-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 20px 18px
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .student-card,
+    .skill-choice span {
+        transition: none
+    }
+}
+
+html.dark-mode .exchange-panel,
+html.dark-mode .student-card {
+    background: var(--d-surface);
+    border-color: var(--d-border)
+}
+
+html.dark-mode .form-row input,
+html.dark-mode .directory-search,
+html.dark-mode .directory-tools select,
+html.dark-mode .mode-option,
+html.dark-mode .mode-filters button {
+    background: var(--d-surface-2);
+    border-color: var(--d-border);
+    color: var(--d-text)
+}
+
+html.dark-mode .mode-option:has(input:checked),
+html.dark-mode .skill-choice input:checked + span {
+    background: #343d33;
+    color: var(--d-text)
+}
+
+html.dark-mode .mode-filters button[aria-pressed="true"],
+html.dark-mode .exchange-cta,
+html.dark-mode .exchange-submit {
+    background: var(--d-accent);
+    border-color: var(--d-accent);
+    color: #1a1a1a
+}
+
+html.dark-mode .skill-choice span,
+html.dark-mode .participation-badge,
+html.dark-mode .skill-tag {
+    background: var(--d-surface-2);
+    border-color: var(--d-border);
+    color: var(--d-text)
+}
+
+html.dark-mode .participation-badge.is-teaching {
+    background: #233325;
+    color: #c9dfb9
+}

@@ -912,6 +912,20 @@ body[data-theme="dark"] .theme-toggle-track {
         max-width: calc(100% - 24px)
     }
 }
+
+@media(max-width:360px) {
+    header {
+        flex-wrap: wrap;
+        gap: 8px
+    }
+
+    .header-actions {
+        flex-basis: 100%;
+        justify-content: flex-end;
+        margin-left: 0
+    }
+}
+
 .github{
     border: 2px solid rgba(0, 0, 0, 0.112);
     background-color:#f2f3ed;

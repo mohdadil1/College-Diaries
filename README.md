@@ -8,7 +8,8 @@ A beginner-friendly, student-built website where students share their profiles, 
 - Share a diary with the browser's sharing menu or copy its profile link
 - Search by name, skill, or interest
 - Filter profiles by course
-- Responsive homepage menu with Home, Students, and Contribution Guide shortcuts
+- Responsive homepage menu with Home, Students, Skill Exchange, and Contribution Guide shortcuts
+- Skill Exchange directory with skill search, teaching and learning requests, and GitHub links
 - Beginner-friendly project ideas with GitHub Discussions links
 - Completed project showcases with team credits and repository or demo links
 - An interactive C programming quiz with explanations and a score summary
@@ -50,6 +51,10 @@ college-diaries/
 ## Run Locally
 
 Open `index.html` in your browser. The C quiz and classmate game each have their own page linked from the homepage. The site does not need a server or any extra tools.
+
+### Skill Exchange
+
+Open `skill-exchange.html` from the homepage menu to browse student skills, filter by skill, and post an **I Can Teach** or **I Want to Learn** profile. Profiles entered in the form are saved in that browser only. To publish a profile for all visitors, add it to the `publishedProfiles` list in `skill-exchange.js` and submit a pull request. Only include a classmate's name and GitHub profile with their permission.
 
 ## How to Contribute
 
