@@ -64,7 +64,7 @@ Open **Build a profile** from the homepage (or visit `profile-builder.html`), fi
 
 To submit your profile:
 
-1. Fork and clone the [`Devi-prasad-H/college-diaries` repository](https://github.com/Devi-prasad-H/college-diaries) as described below.
+1. Fork and clone the [`Devi-prasad-H/college-diaries` repository](https://github.com/mohdadil1/college-diaries) as described below.
 2. Save your profile photo in `images/` (for example, `images/your-name.jpg`).
 3. Paste the generated card inside `<div id="grid" class="grid">` in `index.html` and change the image `src` to your photo's path.
 4. Open `index.html` and check that your card appears in search, matches its course filter, and opens the diary with **View diary**.
